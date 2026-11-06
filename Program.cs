@@ -3,7 +3,7 @@ using InventarioRepuestos.Models;
 using InventarioRepuestos.Repositories;
 using InventarioRepuestos.Services;
 
-IProductoRepository repositorio = new ProductoRepository();
+IProductoRepository repositorio = new ProductoReposiyorySQL();
 InventarioService servicio = new InventarioService(repositorio);
 
 bool continuar = true;
@@ -45,7 +45,6 @@ while (continuar)
 
             var nuevo = new Producto
             {
-                Id = servicio.ObtenerTodos().Count + 1,
                 Codigo = codigo,
                 Nombre = nombre,
                 Precio = precio,
